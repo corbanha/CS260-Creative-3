@@ -7,10 +7,7 @@ capitalize first letter of first word, add period on end "make a sentence"
 
 more cypherish:
 convert to binary
-convert to hex
-convert to 64bit
 convert to morse code
-
 
 randomize the words
 randomize the letters generally
@@ -47,26 +44,13 @@ function toProperSentance(str){
     return str.substring(0, 1).toUpperCase() + str.substring(1) + ".";
 }
 
-//
+//Convert string to binary
 function toBinary(str){
     var newString = "";
     
     for(var i = 0; i < str.length; i++){
         newString += str.charCodeAt(i).toString(2);
         if(i < str.length - 1) newString += " ";
-    }
-    
-    return newString;
-}
-
-function toCustomBase(str, newBase, addSpaces){
-    if(newBase < 2 || newBase > 64) return str;
-    if(newBase == 2) return toBinary(str);
-    var newString = "";
-    
-    for(var i = 0; i < str.length; i++){
-        if(str.charAt(i) == ' ') newString += " ";
-        newString += str.charCodeAt(i).toString(newBase);
     }
     
     return newString;
@@ -95,5 +79,81 @@ function toMorseCode(str){
         newString += morseAlphabet[str.charAt(i)];
     }
     
+    return newString;
+}
+
+//randomize the letters in the string
+function toRandLettering(str){
+    
+    
+    var newString = str;
+    
+    for(var i = 0; i < str.length * 3; i++){
+        
+        
+        //now swop those letters
+        var temp = newString.charAt(firstLetter);
+        
+        newString = newString.substring(0, firstLetter) + 
+            newString.substring(secondLetter, secondLetter + 1) + newString.substring(firstLetter + 1);
+        newString = newString.substring(0, secondLetter) + temp + newString.substring(secondLetter + 1);
+    }   
+    return newString;
+}
+
+//randomize the words around in the string
+function toRandWording(str){
+    var wordsArray = str.split(" ");
+    var firstWord = 0;
+    var secondWord = 0;
+    
+    for(var i = 0; i < wordsArray.length * 3; i++){
+        firstWord = Math.floor(Math.random() * wordsArray.length);
+        secondWord = Math.floor(Math.random() * wordsArray.length);
+        
+        var temp = wordsArray[firstWord];
+        wordsArray[firstWord] = wordsArray[secondWord];
+        wordsArray[secondWord] = temp;
+    }
+    
+    var newString = "";
+    
+    for(var i = 0; i < wordsArray.length; i++){
+        newString += wordsArray[i];
+        if(i < wordsArray.length - 1) newString += " ";
+    }
+    return newString;
+}
+
+//caeser cipher, hold the dressing
+function toCaesar(str, rotation){
+    while(rotation >= 26) rotation -= 26;
+    
+    var newString = "";
+    
+    for(var i = 0; i < str.length; i++){
+        var code = str.charCodeAt(i);
+        
+        if(code >= 65 && code <= 90){
+            code += rotation;
+            if(code > 90) code -= 26;
+        }else if(code >= 97 && code <= 122){
+            code += rotation;
+            if(code > 122) code -= 26;
+        }else{
+            //number or something
+        }
+        
+        newString += String.fromCharCode(code);
+    }
+    return newString;
+}
+
+//reverse the string
+function toReverse(str){
+    var newString = "";
+    for(var i = str.length - 1; i >= 0; i--){
+        newString += str.charAt(i);
+    }
     return newString;
 }
