@@ -85,11 +85,13 @@ function toMorseCode(str){
 //randomize the letters in the string
 function toRandLettering(str){
     
-    
+    var firstLetter = 0;
+    var secondLetter = 0;
     var newString = str;
     
     for(var i = 0; i < str.length * 3; i++){
-        
+        firstLetter = Math.floor(Math.random() * str.length);
+        secondLetter = Math.floor(Math.random() * str.length);
         
         //now swop those letters
         var temp = newString.charAt(firstLetter);

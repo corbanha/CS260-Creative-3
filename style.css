@@ -1,0 +1,17 @@
+.cipherBox {
+    background-color: rgb(200, 200, 200);
+    margin: 20px;
+    padding: 10px;
+    max-width: 50%;
+    margin-bottom: 0px;
+}
+
+.cipherText {
+    font-family: 'VT323', monospace;
+    font-size: 16pt;
+}
+
+.nameText {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 20pt;
+}
