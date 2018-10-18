@@ -41,6 +41,7 @@ function toUpperEachWord(str){
 //make the string into a proper sentence
 function toProperSentance(str){
     if(str.length == 0) return str;
+    if(str.substr(-1) == "." || str.substr(-1) == "!" || str.substr(-1) == "?") return str.substring(0, 1).toUpperCase() + str.substring(1);
     return str.substring(0, 1).toUpperCase() + str.substring(1) + ".";
 }
 
@@ -76,7 +77,12 @@ function toMorseCode(str){
     //alert(morseAlphabet['a']);
     
     for(var i = 0; i < str.length; i++){
-        newString += morseAlphabet[str.charAt(i)];
+        if(morseAlphabet[str.charAt(i)] == undefined){
+            newString += str.charAt(i);
+        }else{
+            newString += morseAlphabet[str.charAt(i)];
+        }
+        
     }
     
     return newString;
@@ -156,6 +162,58 @@ function toReverse(str){
     var newString = "";
     for(var i = str.length - 1; i >= 0; i--){
         newString += str.charAt(i);
+    }
+    return newString;
+}
+
+//Atbash A = Z, B = Y, ...
+function toAtBash(str){
+    var newString = "";
+    
+    for(var i = 0; i < str.length; i++){
+        var code = str.charCodeAt(i);
+        
+        if(code >= 65 && code <= 90){
+            code -= 65;
+            code = 25 - code;
+            
+            code += 65;
+        }else if(code >= 97 && code <= 122){
+            code -= 97;
+            code = 25 - code;
+            code += 97;
+        }else{
+            //it's a number or a symbol
+        }
+        newString += String.fromCharCode(code);
+        
+    }
+    return newString;
+}
+
+//ROT13 A = N, B = O, ...
+function toRot13(str){
+    var newString = "";
+    
+    for(var i = 0; i < str.length; i++){
+        var code = str.charCodeAt(i);
+        
+        if(code >= 65 && code <= 90){
+            code -= 65;
+            code += 13;
+            if(code > 25) code -= 26;
+            code += 65;
+        }else if(code >= 97 && code <= 122){
+            code -= 97;
+            code += 13;
+            
+            if(code > 25) code -= 26;
+            code += 97;
+        }else{
+            //it's a number or a symbol
+        }
+        newString += String.fromCharCode(code);
+        
     }
     return newString;
 }
