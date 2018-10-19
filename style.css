@@ -3,15 +3,18 @@ body {
 }
 
 boxes {
-    
+    display: inline;
+    float: left;
+    vertical-align: middle;
 }
 .cipherBox {
     background-image: linear-gradient(to right, #c6c4c4, #8c8c8c, #c6c4c4);
     margin: 20px;
     padding: 10px;
+    margin-left: 45px;
     max-width: 50%;
-    margin-bottom: 0px;
-    height: 40%;;
+    margin-bottom: 5px;
+    height: 40%;
     width: 15%;
     float: left;
     overflow: hidden;
