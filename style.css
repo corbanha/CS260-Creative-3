@@ -1,12 +1,17 @@
+body {
+    background-image: linear-gradient(to right, #ff7272 , #ff4242, #ff7272);
+}
 .cipherBox {
-    background-color: rgb(200, 200, 200);
+    background-image: linear-gradient(to right, #c6c4c4, #8c8c8c, #c6c4c4);
     margin: 20px;
     padding: 10px;
     max-width: 50%;
     margin-bottom: 0px;
     height: 35%;;
-    float: left;
     width: 15%;
+    float: left;
+    
+    
 }
 
 .cipherText {
