@@ -1,23 +1,27 @@
 body {
     background-image: linear-gradient(to right, #ff7272 , #ff4242, #ff7272);
 }
+
+boxes {
+    
+}
 .cipherBox {
     background-image: linear-gradient(to right, #c6c4c4, #8c8c8c, #c6c4c4);
     margin: 20px;
     padding: 10px;
     max-width: 50%;
     margin-bottom: 0px;
-    height: 35%;;
+    height: 40%;;
     width: 15%;
     float: left;
-    
+    overflow: hidden;
     
 }
 
 .cipherText {
     font-family: 'VT323', monospace;
     font-size: 110%;
-    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .nameText {
@@ -45,6 +49,7 @@ form {
 
 header {
     text-align: center;
+    text-shadow: 2px 2px #d10000;
     
 }
 @media screen and (max-width: 600px) {
