@@ -2,22 +2,19 @@ body {
     background-image: linear-gradient(to right, #ff7272 , #ff4242, #ff7272);
 }
 
-boxes {
-    display: inline;
-    float: left;
-    vertical-align: middle;
-}
 .cipherBox {
     background-image: linear-gradient(to right, #c6c4c4, #8c8c8c, #c6c4c4);
     margin: 20px;
     padding: 10px;
-    margin-left: 45px;
+    margin-left: 3%;
+    margin-right: 2%;
     max-width: 50%;
     margin-bottom: 5px;
     height: 40%;
     width: 15%;
     float: left;
     overflow: hidden;
+    display: inline;
     
 }
 
@@ -25,11 +22,14 @@ boxes {
     font-family: 'VT323', monospace;
     font-size: 110%;
     word-wrap: break-word;
+    float: left;
+    display: inline;
 }
 
 .nameText {
     font-family: 'Press Start 2P', monospace;
     font-size: 100%;
+    display: inline;
 }
 
 input, textarea {
@@ -37,6 +37,7 @@ input, textarea {
     border: silver;
     border-style: inset;
     border-width: 3px;
+    display: inline;
     
 }
 
@@ -53,10 +54,6 @@ form {
 header {
     text-align: center;
     text-shadow: 2px 2px #d10000;
+    display: inline;
     
-}
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
 }
