@@ -24,9 +24,13 @@
 </head>
 
 <body>
+    <header>
+        <h1>COOL CIPHER</h1>
+    </header>
+    
     <div ng-app="myApp" ng-controller="myController">
         <form>
-            <input type="text" ng-model="userText" ng-keyup="updateCiphars()"></input>
+            <input type="text" ng-model="userText" ng-keyup="updateCiphars()" placeholder="Enter Text Here"></input>
         </form>
         
         <div ng-repeat="ciphar in ciphars" style="margin: auto;">

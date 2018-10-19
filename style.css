@@ -4,14 +4,46 @@
     padding: 10px;
     max-width: 50%;
     margin-bottom: 0px;
+    height: 35%;;
+    float: left;
+    width: 15%;
 }
 
 .cipherText {
     font-family: 'VT323', monospace;
-    font-size: 16pt;
+    font-size: 110%;
+    overflow-wrap: break-word;
 }
 
 .nameText {
     font-family: 'Press Start 2P', monospace;
-    font-size: 20pt;
+    font-size: 100%;
+}
+
+input, textarea {
+    background-color: rgb(200, 200, 200);
+    border: silver;
+    border-style: inset;
+    border-width: 3px;
+    
+}
+
+input {
+    width: 70%;
+    padding: 2px;
+}
+
+form {
+    text-align: center;
+    
+}
+
+header {
+    text-align: center;
+    
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
 }
