@@ -33,18 +33,14 @@
             <input type="text" ng-model="userText" ng-keyup="updateCiphars()" placeholder="Enter Text Here"></input>
         </form>
         
-        <div ng-repeat="ciphar in ciphars" style="margin: auto;">
+        <div class = "boxes" ng-repeat="ciphar in ciphars" style="margin: auto;">
             <div class="cipherBox">
                 <span class="nameText">{{ciphar.name}}</span>
-                <br>
+    
                 <span class="cipherText">{{ciphar.code}}</span>
             </div>
-            <br>
             
         </div>
-
-
-
 
     </div>
     <!-- Bring in the scripts -->
